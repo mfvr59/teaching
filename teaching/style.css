@@ -1,0 +1,223 @@
+/* CSS Variables for light and dark themes */
+:root {
+  --bg: #f9f9f9;
+  --text: #222;
+  --primary: #2d6cdf;
+  --nav-bg: #fff;
+  --nav-text: #222;
+  --table-header: #e3e8f0;
+  --table-row: #fff;
+  --border: #d1d5db;
+}
+[data-theme="dark"] {
+  --bg: #181a1b;
+  --text: #f3f3f3;
+  --primary: #7da6ff;
+  --nav-bg: #23272a;
+  --nav-text: #f3f3f3;
+  --table-header: #23272a;
+  --table-row: #181a1b;
+  --border: #333;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Quicksand', sans-serif;
+  min-height: 100vh;
+}
+header {
+  background: var(--nav-bg);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+}
+.navbar {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+.navbar a {
+  text-decoration: none;
+  color: var(--nav-text);
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.navbar a.active, .navbar a:hover {
+  color: #80b577;
+}
+#theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--nav-text);
+}
+main {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+}
+h2, h3 {
+  margin-top: 0;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5rem;
+  background: var(--table-row);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+th, td {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+  text-align: left;
+}
+th {
+  background: var(--table-header);
+}
+tbody tr:nth-child(even) {
+  background: var(--table-header);
+}
+tbody tr:nth-child(odd) {
+  background: var(--table-row);
+}
+td a {
+  color: var(--primary);
+  text-decoration: underline;
+}
+footer {
+  text-align: center;
+  padding: 2rem 0 1rem 0;
+  color: #888;
+  font-size: 0.95rem;
+}
+
+.profile-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+  margin-bottom: 2.5rem;
+}
+.profile-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+.profile-name {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+  text-align: center;
+}
+.profile-bio {
+  max-width: 600px;
+  text-align: center;
+  font-size: 1.15rem;
+  color: var(--text);
+  margin: 0 0 1.5rem 0;
+  line-height: 1.6;
+}
+.recent-posts {
+  max-width: 700px;
+  margin: 0 auto 2rem auto;
+}
+.recent-posts h2 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+.posts-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.posts-table td {
+  padding: 0.7rem 0.5rem;
+  border: none;
+  font-size: 1.05rem;
+  vertical-align: top;
+}
+.posts-table .post-date {
+  width: 140px;
+  color: #444;
+  font-family: 'Menlo', 'Consolas', monospace;
+  font-size: 1rem;
+  white-space: nowrap;
+}
+.posts-table a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+.posts-table a:hover {
+  text-decoration: underline;
+  color: #80b577;
+}
+strong, b {
+  color: #80b577;
+}
+h3 {
+  color: #80b577;
+}
+.post-meta {
+  font-style: italic;
+  margin-bottom: 1.2rem;
+}
+.posts-table .post-date, .post-date {
+  font-family: 'Quicksand', sans-serif !important;
+  color: #111;
+}
+.green-text {
+  color: #80b577;
+}
+[data-theme="dark"] .post-date {
+  color: #fff;
+}
+section#teaching h3 {
+  margin-top: 2.5rem;
+}
+section#teaching table {
+  margin-bottom: 2.5rem;
+}
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  main {
+    padding: 0 0.5rem;
+  }
+  table, th, td {
+    font-size: 0.95rem;
+  }
+  .profile-section {
+    margin-top: 1.5rem;
+  }
+  .profile-bio {
+    font-size: 1rem;
+    padding: 0 0.5rem;
+  }
+  .recent-posts {
+    max-width: 100%;
+    padding: 0 0.5rem;
+  }
+  .posts-table .post-date {
+    width: 90px;
+    font-size: 0.95rem;
+  }
+} 
